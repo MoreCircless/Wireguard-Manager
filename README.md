@@ -80,7 +80,7 @@ The script is structured into several functions:
 ## Contributors
 
 - [@PdotG](https://github.com/PdotG)
-- [@morcircles](https://github.com/morcircles)
+- [@morcircles](https://github.com/morecircless)
 
 ## License
 
