@@ -4,8 +4,7 @@ import subprocess
 import argparse
 from colorama import Fore, Back, Style
 
-
-def levantar_vpn():
+def on_vpn():
     print(Fore.CYAN + "\nTrying to set up the VPN ...\n" + Fore.RESET)
     try:
         if status() == False:
@@ -18,7 +17,7 @@ def levantar_vpn():
     except subprocess.CalledProcessError as e:
         print(e)
 
-def cerrar_vpn():
+def off_vpn():
     print(Fore.CYAN + "\nTrying to set down the VPN...\n" + Fore.RESET)
     try:
         if status() == True:
@@ -34,23 +33,23 @@ def cerrar_vpn():
 
 
 def status() -> bool:
-    """La funcion devuelve Checkea si existe la wg0 en las interfaces de red, devuelve True si existe, si no, devuelve False"""
+    """Function checks if "wg0" exist in the net interfaces, returns True if it exist, else, returns False"""
     try:
         output = subprocess.run(["ip", "a"], check=True, capture_output=True, text=True)
-        flag = None
+        state = None
         if "wg0" in output.stdout:
-            flag = True
+            state = True
         else:
-            flag = False
+            state = False
 
     except subprocess.CalledProcessError as e:
         print(e)
 
-    return flag 
+    return state
 
 
-def checkstatus(flag: bool):
-    if flag == True:
+def checkstatus(state: bool):
+    if state == True:
         print(Fore.GREEN + "  ✓ -> VPN is Up \n" + Fore.RESET)
     else:
         print(Fore.RED + "  x -> VPN is Down" + Fore.RESET)
@@ -59,20 +58,21 @@ def checkstatus(flag: bool):
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(
-                    prog='VPN Setter',
-                    description='Activa o desactiva la VPN',
-                    epilog= Fore.MAGENTA + "Script hecho por Pavlo y @morcircles" + Fore.RESET,
+                    prog='VPN Setter for WireGuard',
+                    description='Controls the normal flow of putting on and off the VPN',
+                    epilog= Fore.MAGENTA + "Script made by @PdotG y @morecircless" + Fore.RESET,
                     )
     
-    parser.add_argument('action', choices=['u', 'd', "s"], help=f'Acción a realizar con la VPN: "u" para levantarla, "d" para cerrarla o "s" para ver el estado')
-    
+    parser.add_argument('action', choices=['u', 'd', "s"], help=f'Action:"u" for turn ON the VPN/ "d" for turn OFF the VPN/ "s" for check the status of the vpn')
+
+
     args = parser.parse_args()
     
     if args.action == 'u':
-        levantar_vpn()
+        on_vpn()
     elif args.action == 'd':
-        cerrar_vpn()
+        off_vpn()
     elif args.action == "s":
-        estado = status()
-        checkstatus(estado)
+        state = status()
+        checkstatus(state)
 
