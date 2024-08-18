@@ -72,8 +72,8 @@ The script uses `colorama` to print color-coded messages:
 
 The script is structured into several functions:
 
-- **`levantar_vpn()`**: Brings up the `wg0` VPN interface if it is not already active.
-- **`cerrar_vpn()`**: Brings down the `wg0` VPN interface if it is currently active.
+- **`on_vpn()`**: Brings up the `wg0` VPN interface if it is not already active.
+- **`off_vpn()`**: Brings down the `wg0` VPN interface if it is currently active.
 - **`status()`**: Checks if the `wg0` interface is active by examining the network interfaces. Returns `True` if active, `False` otherwise.
 - **`checkstatus(flag)`**: Prints the current status of the VPN based on the flag returned by the `status()` function.
 
@@ -86,6 +86,3 @@ The script is structured into several functions:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-Feel free to adjust the content as needed!
