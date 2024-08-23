@@ -1,10 +1,10 @@
 
 
-# VPN Setter
+# Wireguard-Manager
 
 ## Overview
 
-**VPN Setter** is a Python script that helps you manage your VPN connection using the `wg-quick` utility for WireGuard. The script allows you to easily bring up or down the VPN interface, as well as check its current status. The output is color-coded for clarity, making it easier to see whether the VPN is active or not.
+**Wireguard-Manager** is a Python script that helps you manage your VPN connection using the `wg-quick` utility for WireGuard. The script allows you to easily bring up or down the VPN interface, as well as check its current status. The output is color-coded for clarity, making it easier to see whether the VPN is active or not.
 
 ## Features
 
