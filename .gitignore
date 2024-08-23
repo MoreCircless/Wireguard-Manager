@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+.pyc
+.pyo
+.pyd
+$pycache.pyc
+
+# C extensions
+*.c
+*.h
+
+# Distribution / packaging
+.egg-info/
+.dist/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+*.whl
+
+# Local configuration
+*.ini
+*.cfg
+*.env
+*.yaml
+
+
+# IDE files
+.idea/
+*.iml
+*.pyproj
+*.suo
+*.sln
+.vscode/
+
+# Local history
+.local
+.venv/
+.git/
