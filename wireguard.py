@@ -75,4 +75,6 @@ if __name__ == "__main__":
     elif args.action == "s":
         state = status()
         checkstatus(state)
+    else:
+        print(Fore.RED + "Not valid parameter!" + Fore.RESET)
 

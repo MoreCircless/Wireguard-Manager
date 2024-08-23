@@ -31,7 +31,7 @@ pip install colorama
 The script provides a simple CLI to manage your VPN:
 
 ```bash
-python vpn_setter.py [ACTION]
+setvpn [action]
 ```
 
 Where `[ACTION]` can be one of the following:
@@ -45,19 +45,19 @@ Where `[ACTION]` can be one of the following:
 - **Set Up VPN**:
 
   ```bash
-  python vpn_setter.py u
+  setvpn u
   ```
 
 - **Shut Down VPN**:
 
   ```bash
-  python vpn_setter.py d
+  setvpn d
   ```
 
 - **Check VPN Status**:
 
   ```bash
-  python vpn_setter.py s
+  setvpn s
   ```
 
 ### Output
